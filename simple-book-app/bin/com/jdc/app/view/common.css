@@ -1,0 +1,238 @@
+*{
+	p: #0B2239;
+	s: #4AD295; 
+}
+
+.frame{
+	-fx-pref-width: 1100px;
+	-fx-pref-height: 700px;
+}
+
+.side-Bar{
+	-fx-background-color: p;
+	-fx-pref-width: 180px;
+}
+
+.icon-wrap{
+	-fx-padding: 10px;
+	-fx-pref-height: 180px;
+	-fx-spacing: 10px;
+	-fx-alignment: center;
+}
+
+.icon-wrap > Label{
+	-fx-font-family: "Arial Rounded MT Bold";
+	-fx-font-size: 20px;
+	-fx-text-fill: white;	
+}
+
+.nav-btn{
+	-fx-padding: 20;
+	-fx-pref-height: 70;
+	-fx-spacing: 10px;
+	-fx-alignment: center-left;
+}
+
+.nav-btn:hover {
+	-fx-background-color: s;
+}
+
+.svg, .lbl{
+	-fx-text-fill: white;
+	-fx-font-size: 17px;
+	-fx-font-weight: bold;
+	-fx-fill: white;
+}
+
+.footer {
+	-fx-pref-height: 80px;
+	-fx-padding: 10px;
+	-fx-alignment: center;
+}
+
+.title-wrap {
+	-fx-pref-height: 80px;
+	-fx-alignment: center-left;
+	-fx-padding: 10px;
+}
+
+.title-wrap > Label {
+	-fx-font-size: 30px;
+	-fx-font-weight: bold;
+}
+
+.view {
+	-fx-pref-width: 920px;
+	-fx-pref-height: 620px;
+}
+
+.search-bar {
+	-fx-pref-height: 80px;
+	-fx-padding: 10px;
+	-fx-spacing: 10px;
+	-fx-alignment: center-left;
+}
+
+.cat-box {
+	-fx-pref-width: 270px;
+	-fx-pref-height: 100px;
+	-fx-alignment: center;
+	-fx-border-color: p;
+	-fx-border-radius: 5px;
+}
+
+.cat-box:hover {
+	-fx-background-color: p;
+	-fx-background-radius: 5px;
+	-fx-cursor: hand;
+}
+
+.cat-box > Label {
+	-fx-text-fill: p;
+	-fx-font-size: 15px;
+}
+
+.cat-box:hover > Label {
+	-fx-text-fill: white;
+}
+
+
+.combo {
+	-fx-pref-width: 160px;
+	-fx-background-color: transparent;
+	-fx-border-width: 1px;
+	-fx-border-color: p;
+	-fx-prompt-text-fill: p;
+}
+
+.txt-fld {
+	-fx-pref-width: 185px;
+	-fx-background-color: transparent;
+	-fx-border-width: 1px;
+	-fx-border-color: p;
+	-fx-prompt-text-fill: p;
+}
+
+.dt-pick {
+	-fx-pref-width: 150px;
+	-fx-background-color: transparent;
+	-fx-border-width: 1px;
+	-fx-border-color: p;
+	-fx-prompt-text-fill: p;
+}
+
+.btn {
+	-fx-pref-width: 85px;
+	-fx-background-color: p;
+	-fx-text-fill: white;
+}
+
+.active {
+	-fx-background-color: s;
+}
+
+.btn:hover {
+	-fx-background-color: s;
+}
+
+.pad10 {
+	-fx-padding: 0 10 10 10;
+}
+ 
+.edit-view {
+	-fx-pref-width: 500px;
+	-fx-pref-height: 550px;
+}
+
+.edit-view-title-wrap {
+	-fx-pref-height: 80px;
+	-fx-background-color: p;
+	-fx-alignment: center;
+}
+
+.edit-view-title-wrap > Label {
+	-fx-font-size: 32px;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+}
+
+.info-wrap {
+	-fx-alignment: center;
+	-fx-pref-height: 30px;
+}
+
+.info-wrap > Label {
+	-fx-font-size: 15px;
+	-fx-text-fill: red;
+}
+
+.textArea {
+	-fx-background-color: transparent;
+	-fx-border-color: p;
+}
+
+
+.scrollPane {
+	-fx-fit-to-width: true;
+	-fx-padding: 0 20 10 10;
+}
+
+FlowPane {
+	-fx-hgap: 10px;
+	-fx-vgap: 10px;
+}
+
+.detail-box {
+	-fx-spacing: 10px;
+	-fx-padding: 10px;
+	-fx-pref-width: 650px;
+	-fx-pref-height: 400px;
+}
+
+.cart-wrap {
+	-fx-pref-width: 380px;
+}
+
+.cart-title-wrap {
+	-fx-alignment: center;
+	-fx-padding: 10px;
+}
+
+.cart-title-wrap > Label {
+	-fx-text-fill: p;
+	-fx-font-size: 19px;
+	-fx-font-weight: bold;
+}
+
+.cart-icon-wrap {
+	-fx-pref-height: 30px;
+	-fx-alignment: center-left;
+	-fx-padding: 0 10 10 0;
+}
+
+.cart-btn-wrap {
+	-fx-alignment: center;
+	-fx-padding: 10px;
+	-fx-spacing: 10px;
+}
+
+.cart-btn-wrap > .cart-btn {
+	-fx-padding: 10px;
+	-fx-alignment: center;
+	-fx-spacing: 10px;
+	-fx-pref-width: 170px;
+	-fx-pref-height: 100px;
+	-fx-border-color: p;
+	-fx-border-width: 2px;
+	-fx-border-radius: 5px;
+}
+
+.cart-btn-wrap > .cart-btn > Label {
+	-fx-font-size: 17px;
+}
+
+.cart-btn-wrap > .cart-btn:hover {
+	-fx-background-color: s;
+	-fx-background-radius: 5px;
+	-fx-cursor: hand;
+}

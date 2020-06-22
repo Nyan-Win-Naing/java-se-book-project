@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="frame" stylesheets="@common.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.app.view.MainFrame">
+   <children>
+      <VBox prefHeight="200.0" prefWidth="100.0" styleClass="side-Bar">
+         <children>
+            <VBox prefHeight="200.0" styleClass="icon-wrap">
+               <children>
+                  <ImageView fitHeight="99.0" fitWidth="99.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../searchW.png" />
+                     </image>
+                  </ImageView>
+                  <Line endX="40.0" startX="-100.0" stroke="WHITE" strokeWidth="2.0" />
+                  <Label text="My Book Store">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="15.0" />
+                     </font>
+                  </Label>
+               </children></VBox>
+            <VBox fx:id="sideBar" VBox.vgrow="ALWAYS">
+               <children>
+                  <HBox onMouseClicked="#showHome" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <SVGPath content="M20 11.532l-10-7.762-10 7.762v-3.165l10-7.762 10 7.762zM17.5 11.25v7.5h-5v-5h-5v5h-5v-7.5l7.5-5.625z" styleClass="svg" />
+                        <Label styleClass="lbl" text="Home" />
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="nav-btn" />
+                        <String fx:value="active" />
+                     </styleClass>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="10.0" onMouseClicked="#showCategory" prefHeight="100.0" prefWidth="200.0" styleClass="nav-btn">
+                     <children>
+                        <SVGPath content="M7.5 11.25h-6.25c-0.691 0-1.25 0.559-1.25 1.25v6.25c0 0.691 0.559 1.25 1.25 1.25h6.25c0.691 0 1.25-0.559 1.25-1.25v-6.25c0-0.691-0.559-1.25-1.25-1.25zM6.25 17.5h-3.75v-3.75h3.75v3.75zM7.5 0h-6.25c-0.691 0-1.25 0.559-1.25 1.25v6.25c0 0.691 0.559 1.25 1.25 1.25h6.25c0.691 0 1.25-0.559 1.25-1.25v-6.25c0-0.691-0.559-1.25-1.25-1.25zM6.25 6.25h-3.75v-3.75h3.75v3.75zM18.75 11.25h-6.25c-0.691 0-1.25 0.559-1.25 1.25v6.25c0 0.691 0.559 1.25 1.25 1.25h6.25c0.691 0 1.25-0.559 1.25-1.25v-6.25c0-0.691-0.559-1.25-1.25-1.25zM17.5 17.5h-3.75v-3.75h3.75v3.75zM18.75 0h-6.25c-0.691 0-1.25 0.559-1.25 1.25v6.25c0 0.691 0.559 1.25 1.25 1.25h6.25c0.691 0 1.25-0.559 1.25-1.25v-6.25c0-0.691-0.559-1.25-1.25-1.25zM17.5 6.25h-3.75v-3.75h3.75v3.75z" styleClass="svg" />
+                        <Label styleClass="lbl" text="Category" />
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="80.0" onMouseClicked="#showBook" prefHeight="100.0" prefWidth="200.0" styleClass="nav-btn">
+                     <children>
+                        <SVGPath content="M17.5 2.5v16.25h-13.125c-1.036 0-1.875-0.839-1.875-1.875s0.839-1.875 1.875-1.875h11.875v-15h-12.5c-1.375 0-2.5 1.125-2.5 2.5v15c0 1.375 1.125 2.5 2.5 2.5h15v-17.5h-1.25zM4.376 16.25v0c-0 0-0.001 0-0.001 0-0.345 0-0.625 0.28-0.625 0.625s0.28 0.625 0.625 0.625c0 0 0.001-0 0.001-0v0h11.873v-1.25h-11.873z" styleClass="svg" />
+                        <Label styleClass="lbl" text="Book" />
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="144.0" onMouseClicked="#showAuthor" prefHeight="100.0" prefWidth="200.0" styleClass="nav-btn">
+                     <children>
+                        <SVGPath content="M11.25 13.801v-1.031c1.377-0.776 2.5-2.71 2.5-4.645 0-3.107 0-5.625-3.75-5.625s-3.75 2.518-3.75 5.625c0 1.935 1.123 3.869 2.5 4.645v1.031c-4.24 0.347-7.5 2.43-7.5 4.949h17.5c0-2.519-3.26-4.602-7.5-4.949z" styleClass="svg" />
+                        <Label styleClass="lbl" text="Author" />
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="220.0" onMouseClicked="#showHistory" prefHeight="100.0" prefWidth="200.0" styleClass="nav-btn">
+                     <children>
+                        <SVGPath content="M11.68 11.68v1.641h-5.859v-1.641h5.859zM15.82 15.82v-9.141h-11.641v9.141h11.641zM15.82 2.5q0.664 0 1.172 0.508t0.508 1.172v11.641q0 0.664-0.508 1.172t-1.172 0.508h-11.641q-0.703 0-1.191-0.488t-0.488-1.191v-11.641q0-0.664 0.488-1.172t1.191-0.508h0.82v-1.68h1.68v1.68h6.641v-1.68h1.68v1.68h0.82zM14.18 8.32v1.68h-8.359v-1.68h8.359z" styleClass="svg" />
+                        <Label styleClass="lbl" text="Sale History" />
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox styleClass="footer">
+               <children>
+                  <Label fx:id="footer" styleClass="lbl" text="By JDC" />
+               </children>
+            </VBox>
+         </children></VBox>
+      <VBox HBox.hgrow="ALWAYS">
+         <children>
+            <HBox styleClass="title-wrap">
+               <children>
+                  <Label fx:id="title" text="My Book Store" />
+               </children>
+            </HBox>
+            <StackPane fx:id="viewHolder" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+   </children>
+</HBox>
