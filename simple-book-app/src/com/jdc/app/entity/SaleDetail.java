@@ -8,6 +8,15 @@ public class SaleDetail {
 	private Sale sale;
 	private int quantity;
 	private int unitPrice;
+	private boolean delete;
+
+	public boolean isDelete() {
+		return delete;
+	}
+
+	public void setDelete(boolean delete) {
+		this.delete = delete;
+	}
 
 	public int getId() {
 		return id;

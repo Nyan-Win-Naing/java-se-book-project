@@ -60,6 +60,9 @@ public class BookCategory {
 	private void initialize() {
 		catService = CategoryService.getInstance();
 		search();
+		
+		
+		name.textProperty().addListener((a, b, c) -> search());
 	}
 	
 	private class CategoryBox extends HBox {

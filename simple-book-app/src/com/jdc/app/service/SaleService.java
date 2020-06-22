@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+import com.jdc.app.entity.Author;
 import com.jdc.app.entity.Book;
 import com.jdc.app.entity.Category;
 import com.jdc.app.entity.Sale;
@@ -73,7 +74,19 @@ public class SaleService {
 	}
 	
 	public void update(SaleDTO saleDTO) {
+		String insertSD = "insert into sale_detail(quantity, unit_price, book_id, sale_id, book_category_id, book_author_id)"
+				+ " values(?, ?, ?, ?, ?, ?)";
+		String updateSD = "update sale_detail set quantity = ?, unit_price = ? where id = ?";
+		String deleteSD = "delete from sale_detail where id = ?";
 		
+		try(Connection conn = ConnectionManager.getConnection();
+				PreparedStatement sdInsert = conn.prepareStatement(insertSD);
+				PreparedStatement sdUpdate = conn.prepareStatement(updateSD);
+				PreparedStatement sdDelete = conn.prepareStatement(deleteSD);) {
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public List<Sale> findSale(LocalDate dateFrom, LocalDate dateTo) {
@@ -159,13 +172,28 @@ public class SaleService {
 				sd.setQuantity(rs.getInt("quantity"));
 				sd.setUnitPrice(rs.getInt("unit_price"));
 				
-				Sale sale = new Sale();
-				sale.setId(rs.getInt("sale_id"));
-				sale.setTax(rs.getInt("sale_tax"));
+				Sale s = new Sale();
+				s.setId(rs.getInt("sale_id"));
+				s.setTax(rs.getInt("sale_tax"));
 				
 				Book b = new Book();
 				b.setId(rs.getInt("book_id"));
-				b.setName("book_name");
+				b.setName(rs.getString("book_name"));
+				
+				Category c = new Category();
+				c.setId(rs.getInt("book_category_id"));
+				c.setName(rs.getString("category_name"));
+				
+				Author a = new Author();
+				a.setId(rs.getInt("book_author_id"));
+				a.setName(rs.getString("author_name"));
+				
+				sd.setAuthor(a);
+				sd.setBook(b);
+				sd.setCategory(c);
+				sd.setSale(s);
+				
+				result.add(sd);
 			}
 			
 		} catch (Exception e) {
