@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+import com.jdc.app.entity.Book;
 import com.jdc.app.entity.Category;
 import com.jdc.app.entity.Sale;
 import com.jdc.app.entity.SaleDTO;
@@ -118,7 +119,7 @@ public class SaleService {
 	
 	public List<SaleDetail> findSaleDetail(Category category, String bookName, LocalDate dateFrom, LocalDate dateTo) {
 		String sql = "select c.name category_name, b.name book_name, a.name author_name, s.tax sale_tax, sd.id sd_id, sd.sale_id sale_id, sd.book_id book_id, sd.book_category_id book_category_id, sd.book_author_id book_author_id,"
-				+ " sd.unit_price unit_price, sd.quantity quantity from sale_detail sd"
+				+ " sd.unit_price unit_price, sd.quantity quantity, sum(sd.unit_price * sd.quantity + s.tax) total from sale_detail sd"
 				+ " join book b on sd.book_id = b.id"
 				+ " join sale s on sd.sale_id = s.id"
 				+ " join category c on sd.book_category_id = c.id"
@@ -151,7 +152,21 @@ public class SaleService {
 				stmt.setObject(i + 1, params.get(i));
 			}
 			
-			stmt.executeQuery();
+			ResultSet rs = stmt.executeQuery();
+			while(rs.next()) {
+				SaleDetail sd = new SaleDetail();
+				sd.setId(rs.getInt("sd_id"));
+				sd.setQuantity(rs.getInt("quantity"));
+				sd.setUnitPrice(rs.getInt("unit_price"));
+				
+				Sale sale = new Sale();
+				sale.setId(rs.getInt("sale_id"));
+				sale.setTax(rs.getInt("sale_tax"));
+				
+				Book b = new Book();
+				b.setId(rs.getInt("book_id"));
+				b.setName("book_name");
+			}
 			
 		} catch (Exception e) {
 			e.printStackTrace();
