@@ -9,6 +9,39 @@ public class SaleDetail {
 	private int quantity;
 	private int unitPrice;
 	private boolean delete;
+	/* Test Code */
+	private String bookName;
+	private int bookId;
+	private int tax;
+	
+	public SaleDetail() {
+		sale = new Sale();
+	}
+
+	public int getTax() {
+		return tax;
+	}
+
+	public void setTax(int tax) {
+		this.tax = tax;
+	}
+
+	public int getBookId() {
+		return bookId;
+	}
+
+	public void setBookId(int bookId) {
+		this.bookId = bookId;
+	}
+
+	public String getBookName() {
+		return bookName;
+	}
+
+	public void setBookName(String bookName) {
+		this.bookName = bookName;
+	}
+	/* Test Code */
 
 	public boolean isDelete() {
 		return delete;
@@ -82,11 +115,13 @@ public class SaleDetail {
 		return author.getName();
 	}
 	
-	public String getBookName() {
-		return book.getName();
-	}
+//	public String getBookName() {
+//		return book.getName();
+//	}
 	
 	public int getSaleTax() {
+//		return getSubTotal() * (10/100);
+//		return getTax();
 		return sale.getTax();
 	}
 	
@@ -95,6 +130,8 @@ public class SaleDetail {
 	}
 	
 	public int getTotal() {
-		return getSubTotal() + getSaleTax();
+		return getSubTotal() + getTax();
 	}
+	
+	
 }

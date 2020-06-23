@@ -44,7 +44,7 @@ public class BookList {
 	
 	public void search() {
 		tblList.getItems().clear();
-		List<Book> bookList = bookService.findByParams(category.getValue(), authorName.getValue(), releaseDate.getValue());
+		List<Book> bookList = bookService.findByParams(category.getValue(), authorName.getValue(), releaseDate.getValue(), null);
 		tblList.getItems().addAll(bookList);
 	}
 	
@@ -126,9 +126,9 @@ public class BookList {
 		createMenu();
 		search();
 		
-		category.valueProperty().addListener((a, b, c) -> search());
-		authorName.valueProperty().addListener((a, b, c) -> search());
-		releaseDate.valueProperty().addListener((a, b, c) -> search());
+//		category.valueProperty().addListener((a, b, c) -> search());
+//		authorName.valueProperty().addListener((a, b, c) -> search());
+//		releaseDate.valueProperty().addListener((a, b, c) -> search());
 	}
 }
 
