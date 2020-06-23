@@ -74,7 +74,7 @@ public class MainFrame implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		footer.setText("\u00A9 By Dev \u00A9");
+		footer.setText("\u00A9 By JDC \u00A9");
 		loadView("My Book Store", "Home");
 	}
 }
